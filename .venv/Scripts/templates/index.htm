@@ -26,13 +26,13 @@
 
 
         <form method="POST" action="/" class="formStyle d-flex" role="search">
-            <input class="form-control me-2" type="search" name="inputValue" id="inputValue" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2" type="search" name="inputValue" id="inputValue" placeholder="Search" aria-label="Search" required>
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         
-          {% if data %}
+          {% if dataOnline %}
 
-          <h1>{{data}}</h1>
+          <h1>STATUS: {{dataOnline}}</h1>
           
           {% endif %}
 
