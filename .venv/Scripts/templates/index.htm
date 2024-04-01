@@ -35,13 +35,13 @@
 
             {% if dataOnline and dataOnline == "True" %}
 
-            <h1 class="status" id="status" >STATUS: <span id="statusSpan" class="status" style="color: green">ONLINE</span></h1>
+            <h1 class="status" id="statusStyle" >STATUS: <span class="status" id="status" style="color: green">ONLINE</span></h1>
             
             {% endif %}
   
             {% if dataOnline and dataOnline == "False" %}
   
-            <h1 class="status" id="status" >STATUS: <span id="statusSpan" class="status"  style="color: red">OFFLINE</span></h1>
+            <h1 class="status" id="statusStyle" >STATUS: <span class="status" id="status"  style="color: red">OFFLINE</span></h1>
             
             {% endif %}
             
@@ -57,11 +57,11 @@
 
   function inputEvent() {
 
-    document.getElementById('status').style.opacity = "1"
-    document.getElementById('statusSpan').style.opacity = "1"
-    document.getElementById('titleNavbar').style.marginLeft = "0.5em"
-    document.getElementById('titleNavbar').style.opacity = "1"
-    document.getElementById('titleNavbar').style.transition = "0.9s"
+
+    document.getElementById('titleNavbar').style.marginLeft = '0.5em'
+    document.getElementById('titleNavbar').style.opacity = '1'
+    document.getElementById('titleNavbar').style.transition = '0.9s'
+
 
     document.getElementById('inputValue').addEventListener('input', function(e) {
 
@@ -75,7 +75,7 @@
 
     })
 
-    document.getElementById('inputValue').addEventListener('focus', function(e) {
+    document.getElementById('inputValue').addEventListener('focus', function() {
 
 
 
@@ -85,7 +85,7 @@
 
 })
 
-document.getElementById('inputValue').addEventListener('focusout', function(e) {
+document.getElementById('inputValue').addEventListener('focusout', function() {
 
 
 
@@ -96,19 +96,20 @@ document.getElementById('inputValue').classList.remove('placeholderFocus')
 })
 
 
-     document.getElementById('inputValue').addEventListener('mouseover', function(e) {
+     document.getElementById('inputValue').addEventListener('mouseover', function() {
       
-      e.target.classList.add('placeholder')
+      document.getElementById('inputValue').classList.add('placeholder')
   
   })
 
-  document.getElementById('inputValue').addEventListener('mouseout', function(e) {
+  document.getElementById('inputValue').addEventListener('mouseout', function() {
       
-      e.target.classList.remove('placeholder')
+    document.getElementById('inputValue').classList.add('placeholder')
   
   })
   
-
+  document.getElementById('statusStyle').style.opacity = '1'
+  document.getElementById('status').style.opacity = '1'
   }
 
 </script>
