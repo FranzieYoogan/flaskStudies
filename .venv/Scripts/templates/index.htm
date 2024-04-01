@@ -12,10 +12,10 @@
     {% endblock %}
 
 </head>
-<body>
+<body onload="inputEvent()">
    <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img class="logoNavbar" src="/static/icons/navbarLogo.png" alt=""></a>
+    <a class="navbar-brand" href="/"><img class="logoNavbar" src="/static/icons/navbarLogo.png" alt=""><span id="titleNavbar" class="titleNavbar">Minecraft API</span></a>
   </div>
 </nav>
 
@@ -29,17 +29,87 @@
             <input class="form-control me-2" type="search" name="inputValue" id="inputValue" placeholder="Search" aria-label="Search" required>
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
-        
-          {% if dataOnline %}
-
-          <h1>STATUS: {{dataOnline}}</h1>
           
-          {% endif %}
+
+          <div class="contentStyle">
+
+            {% if dataOnline and dataOnline == "True" %}
+
+            <h1>STATUS: <span style="color: green">ONLINE</span></h1>
+            
+            {% endif %}
+  
+            {% if dataOnline and dataOnline == "False" %}
+  
+            <h1>STATUS: <span style="color: red">OFFLINE</span></h1>
+            
+            {% endif %}
+            
+          </div>
+        
 
     </div>
 
 </section>
 
+
+<script>
+
+  function inputEvent() {
+
+    document.getElementById('titleNavbar').style.marginLeft = "0.5em"
+    document.getElementById('titleNavbar').style.opacity = "1"
+    document.getElementById('titleNavbar').style.transition = "0.9s"
+
+    document.getElementById('inputValue').addEventListener('input', function(e) {
+
+    if(e.target.value != "") {
+
+      document.getElementById('inputValue').classList.add('placeholderText')
+
+    }
+
+   
+
+    })
+
+    document.getElementById('inputValue').addEventListener('focus', function(e) {
+
+
+
+  document.getElementById('inputValue').classList.add('placeholderFocus')
+
+
+
+})
+
+document.getElementById('inputValue').addEventListener('focusout', function(e) {
+
+
+
+document.getElementById('inputValue').classList.remove('placeholderFocus')
+
+
+
+})
+
+
+     document.getElementById('inputValue').addEventListener('mouseover', function(e) {
+      
+      e.target.classList.add('placeholder')
+  
+  })
+
+  document.getElementById('inputValue').addEventListener('mouseout', function(e) {
+      
+      e.target.classList.remove('placeholder')
+  
+  })
+  
+
+  }
+
+</script>
 
 </body>
 </html>

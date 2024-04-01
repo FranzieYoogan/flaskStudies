@@ -6,11 +6,93 @@
 
 }
 
-body {
+@font-face {
+    font-family: pixel;
+    src: url('./fonts/Minecraft.ttf');
+  }
 
+  button {
+
+    transition: 1s !important;
+
+  }
+  
+
+body {
+    font-family: pixel !important;
     background: url('/static/background/sky.gif');
     background-size: 100%;
     background-position-y:  5%;
+
+}
+
+.placeholderFocus::placeholder {
+
+    color: white !important;
+
+
+}
+
+.placeholderFocus {
+
+    color: white !important;
+    background-color: green !important;
+    box-shadow: 2px 2px 2px  white !important;
+    opacity: 1 !important;
+}
+
+.placeholder::placeholder {
+
+    color: white !important;
+    cursor: text !important;
+}
+
+.placeholderText {
+
+    color: white !important;
+    cursor: text !important;
+}
+
+.placeholder {
+
+
+    cursor: text !important;
+}
+
+input {
+
+    background-color: transparent !important;
+    border: 1px solid green !important;
+    transition: 1s !important;
+}
+
+input:hover {
+
+    background-color: green !important;
+    border: 1px solid transparent !important;
+
+}
+
+
+.contentStyle {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+
+}
+
+.titleNavbar {
+
+  color: white;
+  opacity: 0;
+  text-shadow: 2px 2px 2px black;
+  background-color: #c7ede6;
+  border: 1px solid black;
+  border-radius: 40px;
+  padding: 11px;
+    font-weight: 900;
 
 }
 
