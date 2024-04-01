@@ -35,13 +35,13 @@
 
             {% if dataOnline and dataOnline == "True" %}
 
-            <h1>STATUS: <span style="color: green">ONLINE</span></h1>
+            <h1 class="status" id="status" >STATUS: <span id="statusSpan" class="status" style="color: green">ONLINE</span></h1>
             
             {% endif %}
   
             {% if dataOnline and dataOnline == "False" %}
   
-            <h1>STATUS: <span style="color: red">OFFLINE</span></h1>
+            <h1 class="status" id="status" >STATUS: <span id="statusSpan" class="status"  style="color: red">OFFLINE</span></h1>
             
             {% endif %}
             
@@ -57,6 +57,8 @@
 
   function inputEvent() {
 
+    document.getElementById('status').style.opacity = "1"
+    document.getElementById('statusSpan').style.opacity = "1"
     document.getElementById('titleNavbar').style.marginLeft = "0.5em"
     document.getElementById('titleNavbar').style.opacity = "1"
     document.getElementById('titleNavbar').style.transition = "0.9s"

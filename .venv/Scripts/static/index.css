@@ -132,7 +132,32 @@ input:hover {
 
 .containerForm {
 
-    margin-top: 3em;
+    margin-top: 10em;
 
 
 }
+
+.status {
+
+    opacity: 0;
+    transition: 1s;
+}
+
+@media only screen and (width: 400px) {
+    .containerForm {
+
+        margin-top: 10em;
+    
+    
+    }
+  }
+
+
+  @media only screen and (width: 554px) {
+    .containerForm {
+
+        margin-top: 7em;
+    
+    
+    }
+  }
